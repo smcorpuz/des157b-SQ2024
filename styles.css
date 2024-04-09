@@ -1,0 +1,237 @@
+/* CSS Resets */
+* {
+    box-sizing: border-box;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Page styling */
+body {
+    background-color: white;
+    color: rgb(235, 235, 235);
+    transition: all 2s;
+}
+
+body.switch {
+    background-image: url("images/clouds.png");
+    color: #333;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    max-width: 1366px;
+    /* make sure the columns don't get too small and text stays readable */
+    min-width: 900px;
+    margin: 1em auto;
+    padding-top: 2em;
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+header {
+    margin: 0 auto 2em auto;
+}
+
+#banner {
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    width: 1100px;
+    height: 250px;
+    margin: auto;
+    background: rgb(131, 131, 131);
+    color: #333;
+    overflow: hidden;
+    background: rgb(142,142,142);
+    background: linear-gradient(180deg, rgba(142,142,142,0.6615239845938375) 0%, rgba(53,53,53,1) 100%);
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+
+#logo{
+    position: relative;
+    left: 800px;
+    bottom: 260px;
+}
+
+#avatar{
+    position: relative;
+    bottom: 425px;
+    left: 800px;
+}
+
+#banner h1{
+    margin-left: 25px;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 75px;
+    color:rgba(235, 235, 235, 0.924);
+    letter-spacing:1px;
+}
+
+#banner h2{
+    position:relative;
+    bottom:30px;
+    margin-left: 25px;
+    color:black;
+    font-size: 25px;
+    color:rgba(200, 200, 200, 0.826);
+}
+
+#banner.switch {
+    background: #fff2d7;
+    color: rgb(235, 235, 235);
+    transition: all 2s;
+    font-family: "DotGothic16", sans-serif;
+    border-bottom-color: rgb(81, 119, 255);
+    border-bottom-width: 8px;
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-left-width: 5px;
+    box-shadow: 5px 15px rgb(33, 33, 33);
+}
+
+#health{
+    width: 500px;
+    height: 20px;
+    background-color: green;
+    margin-left: 20px;
+    border-radius: 50px;
+    border: 1px solid white;
+    outline: 3px solid black;
+}
+
+#banner.switch h1{
+    color: black;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+#banner.switch h2{
+    color: rgb(68, 68, 68);
+    position: relative;
+    left: 475px;
+    bottom: 225px;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em auto;
+}
+
+main section {
+    flex: 1;
+    margin: 0 .25em;
+    padding: 1em;
+    text-align: center;
+}
+
+section.switch{
+    border: 5px solid black;
+    transition: all 1s;
+    border-radius: 5px;
+}
+
+main h3{
+    color: black;
+    text-transform:uppercase;
+}
+
+section.switch h3{
+    font-family: "DotGothic16", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ol, nav ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+section.switch{
+    background-color: white;
+    border: solid 5px rgb(105, 82, 131);
+    border-radius: 5px;
+}
+
+
+
+section a {
+    line-height: 1.1em;
+    display: inline-block;
+    padding: .5em;
+    color: rgb(110, 110, 110);
+}
+
+section a:hover {
+    background-color: black;
+    color:white;
+    transition-duration: .2s;
+}
+
+section.switch a {
+    color: #333;
+    font-family: "DotGothic16", sans-serif;
+    color: rgb(110, 110, 110);
+}
+
+section.switch a:hover {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    background-color: white;
+    color: rgb(110, 110, 110);
+    transition-duration: .2s;
+}
+
+button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border: 1px solid transparent;
+    font-family: "Roboto", sans-serif;
+}
+
+button:hover {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    color: black;
+    border-radius: 1px;
+    background-color: #333;
+}
+
+button.switch {
+    background-color: rgb(24, 46, 88);
+    font-family: "DotGothic16", sans-serif;
+    border: 2px solid white;
+    outline: solid 5px #e8a007;
+    border-radius: 5px;
+}
+
+button.switch:hover {
+    background-color: #333;
+    color: rgb(235, 235, 235);
+}
