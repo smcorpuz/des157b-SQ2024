@@ -6,19 +6,29 @@
     <title>Block Buster Video</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=DotGothic16&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <video id="myVideo" poster ='images/cover.jpg' controls muted loop playsinline>
+    <i class="fas fa-moon"></i>
+
+    <video id="myVideo" poster ='images/cover.jpg' muted autoplay playsinline>
         <source src="media/daytime.webm" type="video/webm">
         <source src="media/daytime.mp4" type="video/mp4">
+
+        <p>Your browser doesn't support HTML5 video.
+            Here is a <a href="media/daytime.mp4">link to the video instead.</a>
+        </p>
     </video>
 
     <i class="fas fa-expand"></i>
 
     <section id="lyrics">
-        <p id="line1" class="hidden">just how fast</p>
+        <p id="line1" class="showing">just how fast</p>
         <p id="line2" class="hidden">the night changes</p>
     </section>
     
