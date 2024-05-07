@@ -3,56 +3,64 @@
         {
             "Date": "April 21, 2024",
             "Minutes": 195,
-            "Genre": "R&B"
+            "Genre": "R&B",
+            "Feeling": "chill and groovy :)"
         },
 
     "point2": 
         {
             "Date": "April 22, 2024",
             "Minutes": 336,
-            "Genre": "Pop"
+            "Genre": "Pop",
+            "Feeling": "happy and cheerful :D"
         },
 
     "point3":
         {
             "Date": "April 23, 2024",
             "Minutes": 299,
-            "Genre": "R&B"
+            "Genre": "R&B",
+            "Feeling": "chill and groovy :)"
         },
 
     "point4":
         {
             "Date": "April 24, 2024",
             "Minutes": 212,
-            "Genre": "Pop"
+            "Genre": "Pop",
+            "Feeling": "happy and cheerful :D"
         },
 
     "point5":
         {
             "Date": "April 25, 2024",
             "Minutes": 246,
-            "Genre": "Kpop"
+            "Genre": "Kpop",
+            "Feeling": "either hyper or sad..."
         },
 
     "point6":
         {
             "Date": "April 26, 2024",
             "Minutes": 430,
-            "Genre": "R&B"
+            "Genre": "R&B",
+            "Feeling": "chill and groovy :)"
         },
 
     "point7":
         {
             "Date": "April 27, 2024",
             "Minutes": 303,
-            "Genre": "House"
+            "Genre": "House",
+            "Feeling": "young and lit :D"
         },
 
     "point8":
         {
             "Date": "April 28, 2024",
             "Minutes": 388,
-            "Genre": "Alternative R&B"
+            "Genre": "Alternative R&B",
+            "Feeling": "like SZA..."
         }
     
 

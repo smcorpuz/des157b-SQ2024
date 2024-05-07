@@ -1,0 +1,60 @@
+main{
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+}
+
+header{
+    text-align: center;
+    color: white;
+    margin-top: 75px;
+    font-size: 45px;
+}
+
+h1{
+    padding: 30px;
+    border: rgb(30, 215, 96) 5px solid;
+    margin-left: 100px;
+    margin-right:100px;
+    border-radius: 30px;
+    text-decoration: rgb(30, 215, 96) underline;
+    background-color: black;
+}
+
+body{
+    background-color: rgb(37, 37, 37);
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    color: white;
+    font-size: 30px;
+}
+
+#information{
+    text-align: center;
+    display: block;
+    margin: 0px 50px;
+}
+
+#illustration{
+    padding: 20px;
+    padding-right: 50px;
+}
+
+#selector{
+    font-size: 25px;
+    background-color: black;
+    color: rgb(30, 215, 96);
+    padding: 15px;
+    font-weight: 500;
+}
+
+#result{
+    line-height: 3em;
+}
+
+#feeling{
+    color: rgb(30, 215, 96);
+    font-weight: 700;
+}
