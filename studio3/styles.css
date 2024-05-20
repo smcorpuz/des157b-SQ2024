@@ -1,6 +1,128 @@
-#city{
-    width: 98%;
+#map{
     height: 500px;
-    background-color: blue;
+    width: 90%;
     margin: auto;
+    border: 3px solid red;
+    margin-top: 30px;
+}
+
+header{
+    text-align: center;
+}
+
+h1{
+    padding: 30px 20px;
+    background-color: red;
+    margin: 20px 300px;
+    border-radius: 20px;
+    margin-top: 50px;
+    color: white;
+    font-size: 50px;
+
+}
+
+h2{
+    text-align: center;
+}
+
+main{
+    display: flex;
+}
+
+section{
+    flex: 1;
+    padding: 20px;
+}
+
+footer{
+    text-align: center;
+    margin-top: 30px;
+    padding: 5px;
+    background-color: red;
+}
+
+#canvas{
+    height: 400px;
+    width: 80%;
+    border: 3px solid red;
+    margin: auto;
+    position: relative;
+    background: rgb(141,255,249);
+background: linear-gradient(180deg, rgba(141,255,249,0.6615239845938375) 0%, rgba(50,147,191,1) 100%);
+margin-top: 70px;
+}
+
+.bridge{
+    background-color: #d3261a;
+}
+
+#road{
+    width:100%;
+    height: 50px;
+    position: absolute;
+    border-bottom:2px solid black ;
+    border-top: 5px solid black;
+    bottom: 60px;
+
+}
+
+#support{
+    position: absolute;
+    height: 350px;
+    width: 70px;
+    left: 225px;
+    bottom: 0px;
+    border: 2px solid black;
+}
+
+#supportsleft1{
+    position: absolute;
+    border-top: 2px solid #d3261a;
+    width: 300px;
+    transform: rotate(-60deg);
+    top: 210px;
+}
+
+#supportsleft2{
+    position: absolute;
+    border-top: 2px solid #d3261a;
+    width: 300px;
+    transform: rotate(-60deg);
+    bottom: 220px;
+}
+
+#supportsright1{
+    position: absolute;
+    border-top: 2px solid #d3261a;
+    width: 300px;
+    transform: rotate(60deg);
+    top: 180px;
+    right: 20px;
+
+}
+
+#supportsrigtht2{
+    position: absolute;
+    border-top: 2px solid #d3261a;
+    width: 300px;
+    transform: rotate(60deg);
+    top: 200px;
+    right: 30px;
+}
+
+
+
+.draggable{
+    position: absolute;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    
+}
+
+body{
+    background-color: rgb(255, 236, 128);
+    font-family: 'Sunflower', sans-serif;
+    
 }
