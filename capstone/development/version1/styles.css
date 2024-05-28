@@ -1,0 +1,16 @@
+#story{
+    display:flex;
+}
+
+#dystopia{
+    flex:1;
+    text-align: center;
+}
+
+#utopia{
+    flex:1;
+    text-align: center;
+}
+body{
+    background-color: rgb(255, 239, 186);
+}
