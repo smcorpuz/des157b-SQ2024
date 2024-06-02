@@ -18,28 +18,257 @@
     
     <title>Version 1 Capstone</title>
 </head>
-<body>
-    <section id="popup">
-        <h1>Community</h1>
-        <h2>Scroll to explore 2 different possibilites</h2>
-    <section>
+<body class="intro-visible">
+    <section id="intro">
+        <article>
+            <h1>Community</h1>
+            <h2>An interactive narrative and experience</h2>
+            <p>Explore how walkable cities and socialbility play a viable role in community, wellbeing, and happiness. </p>
+            <button>Let's Explore!</button>
+        </article>
+    </section>
     <section id="story">
         <div id="dystopia">
-            <!--Use animate on scroll-->
-            <p>Dystopian Side</p>
+            <div id="time">
+            
+                <h2>7:30 AM</h2>
+                <p>Wakes up and starts the day</p>
+                
+
+            </div>
+
+            <div id="Get ready">
+                <h2>7:30 AM - 8:00 AM</h2>
+                <p>They get ready for their day. They might have a quick breakfast or none at all.</p>
+            
+            </div>
+
+            <div id="Commute">
+                <h2> 8:00 AM- 9:00 AM</h2>
+                <p>Distance along with super congested traffic forces them to leave the house at 8:00 in order to get to work on time.</p>
+            </div>
+
+            <div id="FirstWork">
+                <h2> 9:00 AM- 12:00 PM</h2>
+                <p>Just working on tasks and attending meetings</p>
+            </div>
+
+            <div id="Lunch">
+                <h2> 12:00 PM- 12:30 PM</h2>
+                <p>Eats lunch quickly either in car or alone in cubicle</p>
+            </div>
+
+            <div id="SecondWork">
+                <h2> 12:30 PM- 5:00 PM</h2> 
+                <p>Spends the rest of the day at work. Stays even if all tasks for the day are done.</p>
+                <p>Has to make themselves look busy or create their own busywork.</p>
+            </div>
+
+            <div id="AfterWork">
+                <h2> 5:00 PM- 6:00 PM</h2> 
+                <p>Commute back home for another one hour drive</p>
+            </div>
+
+            <div id="dinner">
+                <h2>6:00 PM - 7:30 PM</h2>
+                <p>Cooks up a simple dinner and watches a TV show while eating.</p>
+            </div>
+
+            <div id="afterDinner">
+                <h2>7:30 PM - 10:30 PM</h2>
+                <p>Usually relaxes and rewinds around this time, but feels super tired and burnt out.</p>
+                <p>They spend today watching TV and scrolling on social media alone.</p>
+            </div>
+
+            <div id="bedtime">
+                <h2>10:30 PM - 11:00 PM</h2>
+                <p>Gets ready for bed and falls asleep.</p>
+            </div>
+        
         </div>
         <div id="utopia">
-             <!--Use animate on scroll-->
-             <p>Utopian Side</p>
+            <div id="time">
+             
+                <h2>7:30 AM</h2>
+                <p>Wakes up and starts the day</p>
+
+            </div>
+
+            <div id="Get ready">
+                <h2>7:30 AM - 8:30AM</h2>
+                <p>Decided to wake up earlier than usual. Is able to cook a full breakfast before going to work.</p>
+            </div>
+
+            <div id="Commute">
+                <h2> 8:30 AM- 9:00 AM</h2>
+                <p>Short distance to train both from home and work along with quick, efficent public transportation makes for a short simple commute to work. </p>
+            </div>
+
+            <div id="FirstWork">
+                <h2> 9:00 AM- 12:00 PM</h2>
+                <p>Starts on tasks for the day and attends meetings.</p>
+            </div>
+
+            <div id="Lunch">
+                <h2> 12:00 PM- 1:00 PM</h2>
+                <p>Able to catch a bite with friends who work nearby.</p>
+                <p>Longer lunch + close by restaurants allows for this.</p>
+            </div>
+
+            <div id="SecondWork">
+                <h2> 12:00 PM- 2:00 PM(ish)</h2>
+                <p>Once done with tasks for the day, they are able to leave work.</p>
+                <p>2:00PM is the average time they finish but it can be sooner or later. They go home at 5 no matter what even if their task is not completed</p>
+            </div>
+
+            <div id="AfterWork">
+                <h2> 2:00 PM - 2:30 PM</h2> 
+                <p>Commute back home</p>
+
+                <div id-="recreation">
+                    <h2>2:30 PM - 6:00 PM</h2>
+                    <p>Meets up with friends who live close by.</p>
+                    <p>Walkable cities allows it to become easier and super quick to hang out with friends</p>
+                    <p>Today, they decided to have a small picnic at a local park and explore an art market</p>
+                </div>
+                
+            </div>
+
+            <div id="dinner">
+                <h2>6:00 PM - 7:30 PM(ish)</h2>
+                <p>They are able to have a flexible eating schedule.</p>
+                <p>Today, they cooked a simple dinner and enjoyed an episode of TV while eating.</p>
+            </div>
+
+            <div id="afterDinner">
+                <h2>7:30 PM - 10:30 PM</h2>
+                <p>Usually relaxes and rewinds around this time.</p>
+                <p>They decided to journal, play some videogames with friends online, and stop by another friend's house.</p>
+            </div>
+
+            <div id="bedtime">
+                <h2>10:30 PM - 11:00 PM</h2>
+                <p>Gets ready for bed and falls asleep.</p>
+            </div>
+       
         </div>
-         <!--Ask questions throughout the narrative -->
     </section>
+
+     <!--Survey for asking questions-->
+    <section id="questions" class="hidden">
+        
+        <div id="getUP">
+            <p>Around what time do you usually wake up for work/school?</p>
+            <form>
+                <input type="radio" id="early" name="wakeUP" value="early">
+                <label for="early">Before 6:00AM</label><br>
+                <input type="radio" id="6:00" name="wakeUP" value="6:00">
+                <label for="6:00">6:00AM - 7:00AM</label><br>
+                <input type="radio" id="7:00AM" name="wakeUP" value="7:00">
+                <label for="7:00">7:00AM-8:00AM</label><br>
+                <input type="radio" id="8:00AM" name="wakeUP" value="8:00">
+                <label for="8:00">8:00AM-9:00AM</label><br>
+                <input type="radio" id="9:00AM" name="wakeUP" value="9:00">
+                <label for="9:00">9:00AM-10:00AM</label><br>
+                <input type="radio" id="later" name="wakeUP" value="later">
+                <label for="later">After 10AM</label><br>
+            </form>
+
+        </div>
+
+        <div id="breakfast">
+            <p>Do you usually eat breakfast before school/work?</p>
+            <form>
+                <input type="radio" id="yes" name="breakfast" value="yes">
+                <label for="yes">yes</label><br>
+                <input type="radio" id="sometimes" name="breakfast" value="sometimes">
+                <label for="sometimes">sometimes</label><br>
+                <input type="radio" id="small" name="breakfast" value="small">
+                <label for="small">just something small</label><br>
+                <input type="radio" id="no" name="breakfast" value="no">
+                <label for="no">no</label><br>
+            </form>
+        </div>
+
+        <div id="question_commute">
+            <p>How long is your commute?</p>
+            <form>
+                <input type="radio" id="wfh" name="commute" value="wfh">
+                <label for="wfh">I work from home</label><br>
+                <input type="radio" id="short" name="commute" value="short">
+                <label for="short">Less than 30 minutes</label><br>
+                <input type="radio" id="30" name="commute" value="30">
+                <label for="30">Half an hour to an hour</label><br>
+                <input type="radio" id="long" name="long" value="long">
+                <label for="long">Over an hour</label><br>
+            </form>
+        </div>
+
+        <div id="question_lunch">
+            <p>How long is your lunch?</p>
+            <form>
+                <input type="radio" id="none" name="lunch" value="none">
+                <label for="none">uhh ngl I don't even have lunch</label><br>
+                <input type="radio" id="15" name="lunch" value="15">
+                <label for="15">15 or less minutes</label><br>
+                <input type="radio" id="30" name="lunch" value="30">
+                <label for="30">Between 15 and 30 minutes</label><br>
+                <input type="radio" id="hour" name="lunch" value="hour">
+                <label for="hour">Between 30 minutes and an hour</label><br>
+                <input type="radio" id="long" name="lunch" value="long">
+                <label for="long">Over an hour</label><br>
+            </form>
+        </div>
+
+        <div id="question_worktime">
+            <p>How long do you work after lunch?</p>
+            <form>
+                <input type="radio" id="none" name="work" value="none">
+                <label for="none">I stop working lol</label><br>
+                <input type="radio" id="one_hour" name="work" value="one_hour">
+                <label for="one_hour">an hour or less</label><br>
+                <input type="radio" id="two_hours" name="work" value="two_hours">
+                <label for="two_hours">2 hours or less</label><br>
+                <input type="radio" id="three_hours" name="work" value="three_hours">
+                <label for="three_hour">3 hours or less</label><br>
+                <input type="radio" id="four_hours" name="work" value="four_hours">
+                <label for="four_hours">4 hours or less</label><br>
+                <input type="radio" id="five_hours" name="work" value="five_hours">
+                <label for="five_hours">5 hours or more</label><br>
+            </form>
+        </div>
+
+        <div id="question_AfterWork">
+            <p>What do you usually do after work?</p>
+            <form>
+                <label for="work"></label><br>
+                <input type="text" id="work" name="work"><br>
+              </form>
+        </div>
+
+        <div id="question_friends">
+            <p>How do you interact with your friends on a weekday?</p>
+            <p>Which of these applies to you the most?</p>
+            <form>
+                <input type="radio" id="none" name="friends" value="none">
+                <label for="none">I don't or hardly interact with them</label><br>
+                <input type="radio" id="text" name="friends" value="text">
+                <label for="text">Very minimal interaction; at most a conversation over text or 30 minutes in real life.</label><br>
+                <input type="radio" id="online" name="lunch" value="online">
+                <label for="online">I interact with my friend(s) at least for an hour online.</label><br>
+                <input type="radio" id="in_person" name="lunch" value="in_person">
+                <label for="in_person">Around an hour in person</label><br>
+                <input type="radio" id="long" name="lunch" value="long">
+                <label for="long">I see my friend(s) for over an hour every weekday</label><br>
+            </form>
+        </div>
+     
+    </div>
     <section id="stats">
         <!--Add graphs here-->
     </section>
     <section id="responses">
         <!--Show people's responses here-->
     </section>
-    <script src="script.js"></script>
 </body>
 </html>

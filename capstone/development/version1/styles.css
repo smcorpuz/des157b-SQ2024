@@ -1,16 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Create the overlay for the intro */
+
+body.intro-visible{
+    background-color: rgba(0,0,0,0.5);
+}
+
+#intro{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#intro article{
+    box-sizing: border-box;
+    background-color: rgb(255, 239, 186);
+    padding: 30px;
+    width: 45vw;
+    height:80vh;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid rgb(235, 153, 0);
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+#intro article h1{
+    text-align: center;
+    font-size: 48px;
+}
+
+#intro article h2{
+    text-align: center;
+    font-size: 24px;
+}
+
+
+#intro button{
+    background-color:rgb(235, 153, 0);
+    border: 2px solid rgb(163, 107, 2) ;
+    display: inline-block;
+}
+
 #story{
     display:flex;
 }
 
 #dystopia{
+    display: flex;
+    flex-direction: column;
     flex:1;
     text-align: center;
+    align-items: center;
+}
+
+#dystopia > div {
+    width: 80%;
+    height: 100%;
+    margin: 100px;
+    padding: 10px;
 }
 
 #utopia{
     flex:1;
     text-align: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+
+#utopia > div {
+    width: 80%;
+    height: 100%;
+    margin: 100px;
+    padding: 10px;
 }
 body{
     background-color: rgb(255, 239, 186);
+    
 }
+
+.hidden{
+    display: none;
+}
+
+
+
+
