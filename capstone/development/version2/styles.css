@@ -83,8 +83,7 @@ body.overlay-visible{
 #story > div{
     display: flex;
     justify-content: center;
-    padding: 5%;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
     
 }
 
@@ -94,7 +93,7 @@ body.overlay-visible{
 }
 
 #story h2{
-    font-size: 48px;
+    font-size: 300%;
 }
 
 #story p{
@@ -104,7 +103,7 @@ body.overlay-visible{
 }
 
 #story img{
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .clock{
     font-family: "Orbitron", sans-serif;
@@ -175,6 +174,32 @@ body{
 }
 
 #breakfast article{
+    box-sizing: border-box;
+    background-color: rgb(255, 239, 186);
+    padding: 30px;
+    width: 45vw;
+    height:80vh;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid rgb(235, 153, 0);
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+#question_commute{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#question_commute article{
     box-sizing: border-box;
     background-color: rgb(255, 239, 186);
     padding: 30px;
