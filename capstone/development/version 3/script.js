@@ -363,9 +363,9 @@
     });
     
 
-    //create the 
+    //code for wakeup chart
 
-    // Fetch data from back4end
+    //fetch data from back4end
     async function fetchWakeUpData() {
         const query = new Parse.Query(WakeupData);
         try {
@@ -377,11 +377,11 @@
         }
     }
 
-    // Create the chart
+    //create the chart
     async function createWakeUpChart() {
         const wakeUpData = await fetchWakeUpData();
 
-        // Make data usable for chart
+        //make data usable 
         const wakeUpCounts = wakeUpData.reduce((acc, choice) => {
             acc[choice] = (acc[choice] || 0) + 1;
             return acc;
@@ -390,10 +390,10 @@
         const labels = Object.keys(wakeUpCounts);
         const data = Object.values(wakeUpCounts);
 
-        // Draw the graph
+        //make canvas
         const ctx = document.getElementById('wakeupChart').getContext('2d');
 
-        // Make the chart
+        //make the chart 
         new Chart(ctx, {
             type: 'bar',
             data: {
@@ -417,5 +417,63 @@
     }
 
     createWakeUpChart();
+
+
+    //code for breakfast chart 
+
+    //fetch data from back4end
+    async function fetchBreakfastData() {
+        const query = new Parse.Query(BreakfastData);
+        try {
+            const results = await query.find();
+            return results.map(result => result.get('choice'));
+        } catch (error) {
+            console.error('Error fetching wake-up data', error);
+            return [];
+        }
+    }
+
+    //create the chart
+    async function createBreakfastChart() {
+        const breakfastData = await fetchBreakfastData();
+
+        //make data usable 
+        const wakeUpCounts = wakeUpData.reduce((acc, choice) => {
+            acc[choice] = (acc[choice] || 0) + 1;
+            return acc;
+        }, {});
+
+        const labels = Object.keys(wakeUpCounts);
+        const data = Object.values(wakeUpCounts);
+
+        //make canvas
+        const ctx = document.getElementById('wakeupChart').getContext('2d');
+
+        //make the chart 
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Responses',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    createWakeUpChart();
+
+
 })();
 
