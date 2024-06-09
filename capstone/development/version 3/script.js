@@ -57,7 +57,9 @@
         if (getupDone) return;
 
         const startDiv = document.getElementById('start');
-        const startDivPOS = startDiv.getBoundingClientRect().bottom;
+        const startDivStyles = window.getComputedStyle(startDiv);
+        const startDivPaddingBottom = parseFloat(startDivStyles.paddingBottom);
+        const startDivPOS = startDiv.getBoundingClientRect().bottom + startDivPaddingBottom;
         const windowHeight = window.innerHeight;
 
         if (startDivPOS < windowHeight) {
@@ -356,7 +358,7 @@
         threeWordsQuestion.classList.add('hidden');
     
         const formData = new FormData(threeWordsForm);
-        const threeWordsResponse = formData.get('3words');
+        const threeWordsResponse = formData.get('threeWords');
         console.log('Three words response:', threeWordsResponse);
     
         saveFormData('ThreeWords', { three_words: threeWordsResponse });
@@ -428,7 +430,7 @@
             const results = await query.find();
             return results.map(result => result.get('choice'));
         } catch (error) {
-            console.error('Error fetching wake-up data', error);
+            console.error('Error fetching breakfast data', error);
             return [];
         }
     }
@@ -438,16 +440,16 @@
         const breakfastData = await fetchBreakfastData();
 
         //make data usable 
-        const wakeUpCounts = wakeUpData.reduce((acc, choice) => {
+        const breakfastCounts = breakfastData.reduce((acc, choice) => {
             acc[choice] = (acc[choice] || 0) + 1;
             return acc;
         }, {});
 
-        const labels = Object.keys(wakeUpCounts);
-        const data = Object.values(wakeUpCounts);
+        const labels = Object.keys(breakfastCounts);
+        const data = Object.values(breakfastCounts);
 
         //make canvas
-        const ctx = document.getElementById('wakeupChart').getContext('2d');
+        const ctx = document.getElementById('breakfastChart').getContext('2d');
 
         //make the chart 
         new Chart(ctx, {
@@ -472,7 +474,345 @@
         });
     }
 
-    createWakeUpChart();
+    createBreakfastChart();
+
+    //code for commute chart 
+
+    //fetch data from back4end
+    async function fetchCommuteData() {
+        const query = new Parse.Query(CommuteData);
+        try {
+            const results = await query.find();
+            return results.map(result => result.get('choice'));
+        } catch (error) {
+            console.error('Error fetching commute data', error);
+            return [];
+        }
+    }
+
+    //create the chart
+    async function createCommuteChart() {
+        const CommuteData = await fetchCommuteData();
+
+        //make data usable 
+        const commuteCounts = CommuteData.reduce((acc, choice) => {
+            acc[choice] = (acc[choice] || 0) + 1;
+            return acc;
+        }, {});
+
+        const labels = Object.keys(commuteCounts);
+        const data = Object.values(commuteCounts);
+
+        //make canvas
+        const ctx = document.getElementById('commuteGraph').getContext('2d');
+
+        //make the chart 
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Responses',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    createCommuteChart();
+
+      //code for lunch chart 
+
+    //fetch data from back4end
+    async function fetchLunchData() {
+        const query = new Parse.Query(LunchData);
+        try {
+            const results = await query.find();
+            return results.map(result => result.get('choice'));
+        } catch (error) {
+            console.error('Error fetching lunch data', error);
+            return [];
+        }
+    }
+
+    //create the chart
+    async function createLunchChart() {
+        const LunchData = await fetchLunchData();
+
+        //make data usable 
+        const lunchCounts = LunchData.reduce((acc, choice) => {
+            acc[choice] = (acc[choice] || 0) + 1;
+            return acc;
+        }, {});
+
+        const labels = Object.keys(lunchCounts);
+        const data = Object.values(lunchCounts);
+
+        //make canvas
+        const ctx = document.getElementById('lunchGraph').getContext('2d');
+
+        //make the chart 
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Responses',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    createLunchChart();
+
+    //code for after work chart 
+
+    //fetch data from back4end
+    async function fetchWorkData() {
+        const query = new Parse.Query(WorkData);
+        try {
+            const results = await query.find();
+            return results.map(result => result.get('choice'));
+        } catch (error) {
+            console.error('Error fetching work data', error);
+            return [];
+        }
+    }
+
+    //create the chart
+    async function createWorkChart() {
+        const WorkData = await fetchWorkData();
+
+        //make data usable 
+        const workCounts = WorkData.reduce((acc, choice) => {
+            acc[choice] = (acc[choice] || 0) + 1;
+            return acc;
+        }, {});
+
+        const labels = Object.keys(workCounts);
+        const data = Object.values(workCounts);
+
+        //make canvas
+        const ctx = document.getElementById('worktimeGraph').getContext('2d');
+
+        //make the chart 
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Responses',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    createWorkChart();
+
+// code for the recreation chart
+  // Fetch recreation data from backend
+  async function fetchRecreationData() {
+    const query = new Parse.Query(RecreationData);
+    try {
+        const results = await query.find();
+        return results.map(result => result.get('choice'));
+    } catch (error) {
+        console.error('Error fetching recreation data:', error);
+        return [];
+    }
+}
+
+// Process fetched data to count responses
+async function processRecreationData() {
+    const recreationData = await fetchRecreationData();
+    const activityCounts = {};
+
+    recreationData.forEach(activities => {
+        activities.forEach(activity => {
+            activityCounts[activity] = (activityCounts[activity] || 0) + 1;
+        });
+    });
+
+    return activityCounts;
+}
+
+// Create the chart
+async function createRecreationChart() {
+    const activityCounts = await processRecreationData();
+    const labels = Object.keys(activityCounts);
+    const data = Object.values(activityCounts);
+
+    const ctx = document.getElementById('recreationGraph').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '# of Responses',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.9)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Call function to create the chart
+createRecreationChart();
+
+
+// code for the social time graph
+
+
+    //fetch data from back4end
+    async function fetchInteractionData() {
+        const query = new Parse.Query(InteractionData);
+        try {
+            const results = await query.find();
+            return results.map(result => result.get('choice'));
+        } catch (error) {
+            console.error('Error fetching interaction data', error);
+            return [];
+        }
+    }
+
+    //create the chart
+    async function createInteractionChart() {
+        const InteractionData = await fetchInteractionData();
+
+        //make data usable 
+        const interactionCounts = InteractionData.reduce((acc, choice) => {
+            acc[choice] = (acc[choice] || 0) + 1;
+            return acc;
+        }, {});
+
+        const labels = Object.keys(interactionCounts);
+        const data = Object.values(interactionCounts);
+
+        //make canvas
+        const ctx = document.getElementById('interactionGraph').getContext('2d');
+
+        //make the chart 
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Responses',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    createInteractionChart();
+
+//create show people's answers from the two forms at the end
+
+//fetch community response
+async function fetchCommunityResponses() {
+    const query = new Parse.Query(CommunityQuestion);
+    try {
+        const results = await query.find();
+        return results.map(result => result.get('q_community'));
+    } catch (error) {
+        console.error('Error fetching community responses:', error);
+        return [];
+    }
+}
+
+//fetch 3 words responses
+async function fetchThreeWordsResponses() {
+    const query = new Parse.Query(ThreeWords);
+    try {
+        const results = await query.find();
+        return results.map(result => result.get('three_words'));
+    } catch (error) {
+        console.error('Error fetching three words responses:', error);
+        return [];
+    }
+}
+
+async function updateResponses() {
+    //get the responses for the function
+    const communityResponses = await fetchCommunityResponses();
+    const threeWordsResponses = await fetchThreeWordsResponses();
+
+
+    const communityList = document.getElementById('answer_community');
+    const threeWordsList = document.getElementById('answer_3words');
+    
+    //clear to update
+    communityList.innerHTML = '';
+    threeWordsList.innerHTML = '';
+
+    //community 
+    communityResponses.forEach(response => {
+        const listItem = document.createElement('p');
+        listItem.textContent = response;
+        communityList.appendChild(listItem);
+    });
+
+    // Update three words responses
+    threeWordsResponses.forEach(response => {
+        const listItem = document.createElement('p');
+        listItem.textContent = response;
+        threeWordsList.appendChild(listItem);
+    });
+}
+
+// Call function to update responses
+updateResponses();
 
 
 })();
