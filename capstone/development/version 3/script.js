@@ -789,12 +789,19 @@ async function updateResponses() {
     const threeWordsResponses = await fetchThreeWordsResponses();
 
 
-    const communityList = document.getElementById('answer_community');
-    const threeWordsList = document.getElementById('answer_3words');
+    const communityList = document.querySelector('#answer_community article');
+    const threeWordsList = document.querySelector('#answer_3words article');
+
+    const communityClose = document.getElementById('communityClose');
+    const threewordsClose = document.getElementById('threewordsClose');
+    
     
     //clear to update
     communityList.innerHTML = '';
     threeWordsList.innerHTML = '';
+
+    communityList.appendChild(communityClose);
+    threeWordsList.appendChild(threewordsClose);
 
     //community 
     communityResponses.forEach(response => {
@@ -813,6 +820,36 @@ async function updateResponses() {
 
 // Call function to update responses
 updateResponses();
+
+//community response overlay
+    const communityEnd = document.getElementById('answer_community');
+    const communityButton = document.getElementById('button_community');
+    const communityClose = document.getElementById('communityClose')
+
+    communityButton.addEventListener('click', function() {
+        communityEnd.classList.remove('hidden');
+        document.body.classList.add('overlay-visible');
+    });
+
+    communityClose.addEventListener('click', function(){
+        communityEnd.classList.add('hidden');
+        document.body.classList.remove('overlay-visible');
+    });
+
+//3 words response overlay
+   const threewordsEnd = document.getElementById('answer_3words');
+   const threewordsButton = document.getElementById('button_3');
+   const threewordsClose = document.getElementById('threewordsClose');
+
+   threewordsButton.addEventListener('click', function(){
+        threewordsEnd.classList.remove('hidden');
+        document.body.classList.remove('overlay-visible');
+   });
+
+    threewordsClose.addEventListener('click', function(){
+        threewordsEnd.classList.add('hidden');
+        document.body.classList.remove('overlay-visible');
+    });
 
 
 })();
