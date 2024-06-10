@@ -1,0 +1,488 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Create the overlay for the intro */
+
+body.overlay-visible{
+    background-color: rgba(0,0,0,0.9);
+}
+
+#intro{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#intro article{
+    box-sizing: border-box;
+    background-color: rgb(23, 23, 23);
+    padding: 30px;
+    width: 45vw;
+    height:60vh;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    box-shadow:   -15px 0 0 0 rgb(235, 153, 0),
+    15px 0 0 0 rgb(235, 153, 0),
+    0 -15px 0 0 rgb(235, 153, 0),
+    0 15px 0 0 rgb(235, 153, 0);
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    
+
+}
+
+#intro article h1{
+    font-family: "Peralta", sans-serif;
+  
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(210, 137, 0);
+}
+
+#intro article h2{
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 3%;
+    color:rgb(205, 205, 205);
+}
+
+#intro article p{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    margin-top: 10%;
+    text-align: center;
+    color:rgb(183, 183, 183);
+
+}
+
+
+#intro button{
+    background-color:rgb(235, 153, 0);
+    border: 2px solid rgb(163, 107, 2) ;
+    display: inline-block;
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 15%;
+    padding: 2% 5%;
+    font-family: 'Peralta', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#intro button:hover{
+    cursor:pointer;
+    color:rgb(238, 238, 238);
+}
+
+#story{
+    display:flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 5%;
+    justify-content: center;
+    text-align: center;
+}
+
+#story > div{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20%;
+    margin-bottom: 10%;
+    
+}
+
+#story > div > div{
+    padding: 2%;
+    margin: 3%;
+}
+
+#story h2{
+    font-size: 300%;
+}
+
+#story p{
+    font-family: "Inter", sans-serif;
+    margin: 10% 0;
+    line-height: 1.8em;
+    font-size: 24px;
+    margin-top: 15%;
+    color:rgb(205, 205, 205);
+}
+
+#story img{
+    margin-top: 10%;
+}
+.clock{
+    font-family: "Orbitron", sans-serif;
+    font-size: 36px;
+    color:rgb(235, 153, 0);
+}
+
+.utopia{
+    flex: 1;
+}
+
+.utopia h2{
+    margin: 10% 0;
+}
+
+.dystopia{
+    flex: 1;
+}
+
+.dystopia h2{
+    margin: 10% 0;
+}
+
+body{
+    background-color: rgb(37, 37, 37);
+    
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    visibility: visible;
+}
+
+#questions h2{
+    font-family: 'Peralta', sans-serif;
+    text-align: center;
+    color: rgb(210, 137, 0);
+    margin-bottom: 10%;
+    font-size: 28px;
+}
+
+/* animation for overlays */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+/* customize the text on the labels */
+label {
+    color: rgb(205, 205, 205);
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 16px;
+    transition: color 0.3s;
+    font-family:"Inter", sans-serif;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: none;
+}
+
+/* customize radio + checkbox button */
+input[type="radio"] + label::before,
+input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 2px solid #666;
+    border-radius: 50%; 
+    background-color: #fff; 
+    vertical-align: middle;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="checkbox"] + label::before {
+    border-radius: 4px;
+}
+
+/* Style the custom radio/checkbox button when checked */
+input[type="radio"]:checked + label::before {
+    background-color: rgb(210, 137, 0);
+    border-color: rgb(109, 71, 0); 
+}
+
+input[type="checkbox"]:checked + label::before {
+    background-color: rgb(210, 137, 0);
+    border-color: rgb(109, 71, 0);
+}
+
+
+
+/* add spacing */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    margin-bottom: 5%;
+}
+
+input[type="submit"], button[type="submit"] {
+    background-color:rgb(235, 153, 0);
+    border: 2px solid rgb(163, 107, 2);
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 50px;
+    font-family: 'Peralta', sans-serif;
+}
+
+/* Hover effect for the submit button */
+input[type="submit"]:hover, button[type="submit"]:hover {
+    color: rgb(238, 238, 238);
+    transform: scale(1.05);
+}
+
+#questions > div{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#questions > div > article{
+    box-sizing: border-box;
+    background-color: rgb(23, 23, 23);
+    padding: 30px;
+    width: 45vw;
+    height:80vh;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    box-shadow:   -15px 0 0 0 rgb(235, 153, 0),
+    15px 0 0 0 rgb(235, 153, 0),
+    0 -15px 0 0 rgb(235, 153, 0),
+    0 15px 0 0 rgb(235, 153, 0);
+    opacity: 0; 
+    animation: fadeIn 1s forwards;
+}
+
+#sandwhiches{
+    display: flex;
+    justify-content: center;
+}
+
+.opposite{
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+@keyframes hoverUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+#story img {
+    display: block; 
+    margin: 0 auto; 
+    animation: hoverUpDown 2s infinite ease-in-out;
+}
+
+
+#facts{
+    line-height: 1.8em;
+    font-size: 36px;
+}
+#facts p{
+    font-family: 'Inter', sans-serif;
+    color: rgb(205, 205, 205);
+    margin: 30% 15%;
+}
+
+#facts h2{
+    font-family: 'Peralta', sans-serif;
+    color:rgb(235, 153, 0);
+    margin: 30% 15%;
+    line-height: 2.0em;
+}
+
+#facts b{
+
+    font-family: 'Inter', sans-serif;
+    color: rgb(235, 153, 0);
+
+}
+
+
+canvas{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+#stats h2{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    color: rgb(205, 205, 205);
+    margin: 10%;
+    line-height: 1.8em;
+}
+
+#stats > div > h2{
+    color:rgb(235, 153, 0);
+    margin-bottom: 1%;
+    font-family: 'Peralta', sans-serif;
+}
+
+#qna{
+    text-align: center;
+}
+
+#qna > div {
+    width: 50%;
+    text-align: center;
+    margin: 10% auto;
+    height: 400px;
+}
+
+
+#q_community{
+    width: 80%;
+    min-height: 200px;
+    text-align: left;
+    padding-top: 0;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+#threeWords{
+    width: 80%;
+    min-height: 200px;
+    text-align: left;
+    padding-top: 0;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+#answer_community{
+    font-family:"Kalam", cursive;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+#answer_community article{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#answer_3words{
+    font-family:"Kalam", cursive;
+    font-weight: 400;
+    font-size: 24px;
+
+}
+
+#answer_3words article{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#answer_3words p{
+    margin: 3%;
+    padding: 5%;
+    background-color: rgb(175, 255, 169);
+}
+
+
+#answer_community p{
+    margin: 3%;
+    padding: 5%;
+    background-color: pink;
+}
+
+#qna h2{
+    font-family: 'Peralta', sans-serif;
+    color:rgb(235, 153, 0);
+    font-size: 36px;
+}
+
+#qna input[type="submit"], button[type="submit"]{
+    margin-top: 5%;
+}
+
+#responses{
+    text-align: center;
+    margin-top: 20%;
+}
+#responses img{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+}
+
+#responses img:hover{
+    cursor:pointer;
+}
+
+.askCommunity{
+    margin: 10%;
+}
+
+
+
+#responses h2{
+    color:rgb(235, 153, 0);
+    font-size: 36px;
+    font-family: 'Peralta', sans-serif;
+
+}
+
+#responses > div > article{
+    text-align: center;
+}
+
+#responses button{
+    background-color:rgb(235, 153, 0);
+    border: 2px solid rgb(163, 107, 2);
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 50px;
+    font-family: 'Peralta', sans-serif;
+    margin-top: 2%;
+}
+
+#responses button:hover{
+    color: rgb(238, 238, 238);
+}
+
+#facts{
+    text-align: center;
+}
